@@ -90,7 +90,7 @@
 CREATE TABLE users (  
   id TEXT PRIMARY KEY,  
   email TEXT UNIQUE NOT NULL,  
-  password_hash TEXT NOT NULL,  
+  password TEXT NOT NULL,  
   role TEXT NOT NULL CHECK (role IN ('admin', 'faculty', 'student', 'dean')),  
   created_at INTEGER DEFAULT (unixepoch())  
 );  
@@ -202,7 +202,7 @@ CREATE TABLE attendance (
    - Initialize SvelteKit app with SQLite and Drizzle ORM.
    - Define schema using Drizzle’s TypeScript API.
 2. **Authentication**
-   - Role-based login (cookie sessions, basic password hashing with bcrypt).
+   - Role-based login (cookie sessions, password).
 3. **Admin Panel**
    - Course/department management UI.
    - User registration forms (students, faculty, deans).
@@ -255,7 +255,7 @@ CREATE TABLE attendance (
 Table users {
   id TEXT [pk]
   email TEXT [unique, not null]
-  password_hash TEXT [not null]
+  password TEXT [not null]
   role TEXT [not null, note: 'CHECK (role IN (\'admin\', \'faculty\', \'student\', \'dean\'))']
   created_at INTEGER [default: 'unixepoch()']
 }
@@ -339,7 +339,7 @@ erDiagram
     users {
         string id PK
         string email
-        string password_hash
+        string password
         string role
         int created_at
     }

@@ -1,8 +1,4 @@
 <script>
-  // let role = $state("");
-  // let email = $state("");
-  // let password = $state("");
-
   let { data, form } = $props();
 </script>
 
@@ -11,10 +7,6 @@
 
   {#if form}
     <p>{form.message}</p>
-  {/if}
-
-  {#if data}
-    <p>{data.email}</p>
   {/if}
 
   <form method="POST">

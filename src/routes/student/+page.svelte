@@ -3,6 +3,7 @@
 </script>
 
 {#if data}
-  <p>{data.logged_in}</p>
-  <p>{data.logged_email}</p>
+  <p>Logged in: {data.logged_in}</p>
+  <p>Logged role: {data.logged_role}</p>
+  <p>Logged email: {data.logged_email}</p>
 {/if}
